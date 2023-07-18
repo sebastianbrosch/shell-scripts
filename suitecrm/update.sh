@@ -18,6 +18,7 @@
 #  10             There are invalid parameters.
 #  11             The version was not specified.
 #  12             Changing to SuiteCRM folder failed.
+#  13             No paramerer was specified.
 #  20             The container is not known.
 #  21             The container is not running.
 #  22             The script could not be injected into the container.
@@ -47,7 +48,9 @@ show_help() {
 container_exists() {
   local container
   container=$1
+  local id
   id=$(docker ps --format="{{.ID}}" | grep -cxF "$container")
+  local name
   name=$(docker ps --format="{{.Names}}" | grep -cxF "$container")
   [[ "$id" == "1" || "$name" == "1" ]]
 }
@@ -64,6 +67,13 @@ inject_to_container() {
   docker cp ./update.sh "$container":/tmp/update.sh > /dev/null
   docker exec -it "$container" bash -c "chmod +x ./tmp/update.sh"
 }
+
+# show the help if there was no parameter specified.
+if [[ "$#" == "0" ]]
+then
+  show_help
+  exit 13
+fi
 
 # get the values from the parameters.
 while getopts ":c:Vv:h" opt; do
