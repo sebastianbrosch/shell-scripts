@@ -9,7 +9,7 @@
 #  -c <container> Run the script on the specified container.
 #  -C             Run the script without a specified container.
 #  -v <version>   The version of SuiteCRM which should be installed.
-#  -V             Updated SuiteCRM to the latest version (8.3.1).
+#  -V             Updated SuiteCRM to the latest version (8.4.0).
 #  -h             Shows the help information of this script.
 #
 # Exit Codes (1X = Script; 2X = Docker; 3X = SuiteCRM):
@@ -27,7 +27,7 @@
 # ------------------------------------------------------------------------
 
 # set the latest version.
-SUITECRM_LATEST=8.3.1
+SUITECRM_LATEST=8.4.0
 
 # function to output the help information to the terminal.
 show_help() {
@@ -39,18 +39,16 @@ show_help() {
   printf "%-20s%-s\n" "  -c <container>" "Run the script on the specified container."
   printf "%-20s%-s\n" "  -C" "Run the script without a specified container."
   printf "%-20s%-s\n" "  -v <version>" "The version of SuiteCRM which should be installed."
-  printf "%-20s%-s\n" "  -V" "Updated SuiteCRM to the latest version (8.3.1)."
+  printf "%-20s%-s\n" "  -V" "Updated SuiteCRM to the latest version (8.4.0)."
   printf "%-20s%-s\n" "  -h" "Shows the help information in the terminal."
   printf "\n\n"
 }
 
 # function to check whether a container with a specified ID or name exists.
 container_exists() {
-  local container
+  local container id name
   container=$1
-  local id
   id=$(docker ps --format="{{.ID}}" | grep -cxF "$container")
-  local name
   name=$(docker ps --format="{{.Names}}" | grep -cxF "$container")
   [[ "$id" == "1" || "$name" == "1" ]]
 }
@@ -149,6 +147,7 @@ case $version in
   8.2.4) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.2.4/SuiteCRM-8.2.4.zip;;
   8.3.0) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.3.0/SuiteCRM-8.3.0.zip;;
   8.3.1) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.3.1/SuiteCRM-8.3.1.zip;;
+  8.4.0) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.4.0/SuiteCRM-8.4.0.zip;;
   *) printf "No valid version specified.\n"; exit 31;;
 esac
 
