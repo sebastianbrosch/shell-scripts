@@ -1,28 +1,48 @@
 # SuiteCRM
 
-## Update SuiteCRM in a Docker Container (`update.sh`)
-This script was implemented to update SuiteCRM in a Docker Container (especially for [bitnami/suitecrm](https://hub.docker.com/r/bitnami/suitecrm/)).
+## Update SuiteCRM in a Docker Container [`update.sh`]
+This script was implemented to update SuiteCRM running in a Docker container (especially [bitnami/suitecrm](https://hub.docker.com/r/bitnami/suitecrm/)).
 
 **Note:** _Create a backup of your SuiteCRM installation before updating SuiteCRM._
 
 ### How to run this script?
 
-#### On a Docker host managing the SuiteCRM container
+#### On a Docker host managing the SuiteCRM container:
 
- 1. Download the script: `wget -q -O update.sh https://raw.githubusercontent.com/sebastianbrosch/shell-scripts/main/suitecrm/update.sh`
- 2. Get the ID or name of your SuiteCRM container: `docker ps --format="{{.ID}} {{.Names}}"`
- 3. Run the script to update SuiteCRM:
-    - update to specific version: `bash update.sh -v 8.4.0 -c <container>`
-    - update to latest version: `bash update.sh -V -c <container>`
+``` shell
+# download the script to the Docker host.
+wget -q -O update.sh https://raw.githubusercontent.com/sebastianbrosch/shell-scripts/main/suitecrm/update.sh
 
-#### On a Docker Container containing the SuiteCRM installation
+# get some basic information of the containers to find the SuiteCRM container.
+docker ps --format="{{.ID}} {{.Names}}"
 
- 1. Get the ID or name of your SuiteCRM container: `docker ps --format="{{.ID}} {{.Names}}"`
- 2. Switch into the terminal of the container: `docker exec -it <container> bash`
- 3. Download the script: `wget -q -O update.sh https://raw.githubusercontent.com/sebastianbrosch/shell-scripts/main/suitecrm/update.sh`
- 4. Run the script to update SuiteCRM:
-    - update to specific version: `bash update.sh -v 8.4.0`
-    - update to latest version: `bash update.sh -V`
+# run the script to update your SuiteCRM container to the latest version.
+# replace <container> with the ID of your SuiteCRM container.
+bash update.sh -V -c <container>
+
+# you can also update to a specific version.
+bash update.sh -v 8.4.0 -c <container>
+```
+
+#### On a Docker container containing the SuiteCRM installation:
+
+``` shell
+# get some basic information of the containers to find the SuiteCRM container.
+docker ps --format="{{.ID}} {{.Names}}"
+
+# switch into the terminal of the SuiteCRM container.
+# replace <container> with the ID of your SuiteCRM container.
+docker exec -it <container> bash
+
+# download the script to the SuiteCRM container.
+wget -q -O update.sh https://raw.githubusercontent.com/sebastianbrosch/shell-scripts/main/suitecrm/update.sh
+
+# run the script to update your SuiteCRM container to the latest version.
+bash update.sh -V
+
+# you can also update to a specific version.
+bash update.sh -v 8.4.0
+```
 
 #### After using this script you should check your installation
 
