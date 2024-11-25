@@ -27,7 +27,7 @@
 # ------------------------------------------------------------------------
 
 # set the latest version.
-SUITECRM_LATEST=8.4.1
+SUITECRM_LATEST=8.7.1
 
 # function to output the help information to the terminal.
 show_help() {
@@ -132,7 +132,7 @@ cd bitnami/suitecrm/ || exit 12
 cversion=$(cat VERSION)
 
 # check if the current version of SuiteCRM can be updated.
-if [[ ! $cversion =~ ^8\.[234]\.[0-9]$ ]]
+if [[ ! $cversion =~ ^8\.[234567]\.[0-9]$ ]]
 then
   printf "This version can not be updated.\n"
   exit 30
@@ -149,6 +149,14 @@ case $version in
   8.3.1) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.3.1/SuiteCRM-8.3.1.zip;;
   8.4.0) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.4.0/SuiteCRM-8.4.0.zip;;
   8.4.1) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.4.1/SuiteCRM-8.4.1.zip;;
+  8.4.2) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.4.2/SuiteCRM-8.4.2.zip;;
+  8.5.0) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.5.0/SuiteCRM-8.5.0.zip;;
+  8.5.1) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.5.1/SuiteCRM-8.5.1.zip;;
+  8.6.0) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.6.0/SuiteCRM-8.6.0.zip;;
+  8.6.1) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.6.1/SuiteCRM-8.6.1.zip;;
+  8.6.2) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.6.2/SuiteCRM-8.6.2.zip;;
+  8.7.0) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.7.0/SuiteCRM-8.7.0.zip;;
+  8.7.1) url=https://github.com/salesagility/SuiteCRM-Core/releases/download/v8.7.1/SuiteCRM-8.7.1.zip;;
   *) printf "No valid version specified.\n"; exit 31;;
 esac
 
