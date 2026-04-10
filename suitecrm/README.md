@@ -21,7 +21,7 @@ docker ps --format="{{.ID}} {{.Names}}"
 bash update.sh -V -c <container>
 
 # you can also update to a specific version.
-bash update.sh -v 8.7.1 -c <container>
+bash update.sh -v 8.9.3 -c <container>
 ```
 
 #### On a Docker container containing the SuiteCRM installation:
@@ -41,7 +41,7 @@ wget -q -O update.sh https://raw.githubusercontent.com/sebastianbrosch/shell-scr
 bash update.sh -V
 
 # you can also update to a specific version.
-bash update.sh -v 8.7.1
+bash update.sh -v 8.9.3
 ```
 
 #### After using this script you should check your installation
@@ -50,13 +50,15 @@ bash update.sh -v 8.7.1
  2. Check your multi-language settings. I recommend to re-import the [translation files](https://crowdin.com/project/suitecrmtranslations).
  3. Check your customizations in SuiteCRM.
 
-**You can update your SuiteCRM 8.2.X, 8.3.X or 8.4.X installation to one of these versions:**
+**You can update your SuiteCRM 8.2 installation or later to one of the following versions:**
 
- - 8.2: [8.2.0](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.2.0), [8.2.1](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.2.1), [8.2.2](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.2.2), [8.2.3](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.2.3), [8.2.4](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.2.4)
- - 8.3: [8.3.0](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.3.0), [8.3.1](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.3.1)
- - 8.4: [8.4.0](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.4.0), [8.4.1](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.4.1), [8.4.2](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.4.2)
- - 8.5: [8.5.0](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.5.0), [8.5.1](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.5.1)
- - 8.6: [8.6.0](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.6.0), [8.6.1](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.6.1), [8.6.2](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.6.2)
- - 8.7: [8.7.0](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.7.0), [8.7.1](https://github.com/salesagility/SuiteCRM-Core/releases/tag/v8.7.1)
+ - 8.2: [8.2.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.0), [8.2.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.1), [8.2.2](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.2), [8.2.3](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.3), [8.2.4](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.4)
+ - 8.3: [8.3.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.3.0), [8.3.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.3.1)
+ - 8.4: [8.4.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.4.0), [8.4.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.4.1), [8.4.2](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.4.2)
+ - 8.5: [8.5.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.5.0), [8.5.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.5.1)
+ - 8.6: [8.6.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.6.0), [8.6.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.6.1), [8.6.2](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.6.2)
+ - 8.7: [8.7.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.7.0), [8.7.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.7.1)
+ - 8.8: [8.8.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.8.0), [8.8.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.8.1)
+ - 8.9: [8.9.0](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.9.0), [8.9.1](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.9.1), [8.9.2](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.9.2), [8.9.3](https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.9.3)
 
 _The script should be checked before use. The use of this script is at your own risk._
