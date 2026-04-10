@@ -39,7 +39,7 @@ show_help() {
   printf "%-20s%-s\n" "  -c <container>" "Run the script on the specified container."
   printf "%-20s%-s\n" "  -C" "Run the script without a specified container."
   printf "%-20s%-s\n" "  -v <version>" "The version of SuiteCRM which should be installed."
-  printf "%-20s%-s\n" "  -V" "Updated SuiteCRM to the latest version (8.4.1)."
+  printf "%-20s%-s\n" "  -V" "Updates SuiteCRM to the latest version (${SUITECRM_LATEST})."
   printf "%-20s%-s\n" "  -h" "Shows the help information in the terminal."
   printf "\n\n"
 }
@@ -63,7 +63,7 @@ inject_to_container() {
   local container
   container=$1
   docker cp ./update.sh "$container":/tmp/update.sh > /dev/null
-  docker exec -it "$container" bash -c "chmod +x ./tmp/update.sh"
+  docker exec -it "$container" bash -c "chmod +x /tmp/update.sh"
 }
 
 # show the help if there was no parameter specified.
